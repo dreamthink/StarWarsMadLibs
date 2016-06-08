@@ -1,0 +1,52 @@
+body {
+	background-image: url("../images/hyperspace.jpg");
+	background-size: cover;
+}
+
+.container {
+	background-color: black;
+}
+
+h1 {
+	font-family: 'Slackey', cursive;
+	font-size: 6em;
+	text-align: center;
+	color: black;
+	color: #FFF620;
+	margin: 1em auto 0;
+}
+
+h2 {
+	color: #FFF620;
+	color: #0FC5E9;
+	font-family: Arial;
+	text-align: center;
+}
+
+.inputs {
+	text-align: center;
+	padding: 1em;
+	width: 50em;
+	margin: 2em auto;
+	border: 1px solid black;
+}
+
+.text {
+	font-family: Arial;
+	font-size: 1.5em;
+	color: #0FC5E9;
+	width: 40em;
+	margin: 0 auto 2em auto;
+	border: 1px solid black;
+}
+
+.text h3, h3 {
+	text-align: center;
+	color: #0FC5E9;
+}
+
+span {
+	text-transform: uppercase;
+	font-weight: bold;
+	text-decoration: underline;
+}
