@@ -50,3 +50,13 @@ span {
 	font-weight: bold;
 	text-decoration: underline;
 }
+
+.btn-reset {
+	text-align: center;
+	background-color: #FFF620;
+	color: black;
+}
+
+.btn-reset:hover {
+	background-color: #0FC5E9;
+}

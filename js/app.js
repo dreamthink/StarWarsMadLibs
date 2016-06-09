@@ -25,4 +25,9 @@ var app = angular.module("myApp", []);
 			this.showTextSection = true;
 			this.showInputSection = true;
 		};
+
+		this.resetMadLibs = function() {
+			this.showTextSection = false;
+			this.showInputSection = false;
+		}
 	});
