@@ -18,9 +18,11 @@ var app = angular.module("myApp", []);
 		this.noun6 = "noun";
 
 	// define showSection as false to prevent display	
-		this.showSection = false;
+		this.showTextSection = false;
+		this.showInputSection = false;
 
 		this.showMadLibs = function() {
-			this.showSection = true;
+			this.showTextSection = true;
+			this.showInputSection = true;
 		};
 	});
