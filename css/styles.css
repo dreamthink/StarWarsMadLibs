@@ -52,6 +52,14 @@ span {
 	color: #FFF620;
 }
 
+.btn-force {
+	background-color: #0FC5E9;
+}
+
+.btn-force:hover {
+	background-color: #FFF620;
+}
+
 .btn-reset {
 	text-align: center;
 	background-color: #FFF620;
@@ -60,4 +68,8 @@ span {
 
 .btn-reset:hover {
 	background-color: #0FC5E9;
+}
+
+.ng-dirty.ng-invalid {
+	background-color: yellow;
 }
