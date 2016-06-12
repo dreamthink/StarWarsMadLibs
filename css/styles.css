@@ -70,6 +70,14 @@ span {
 	background-color: #0FC5E9;
 }
 
-.ng-dirty.ng-invalid {
+.error {
 	background-color: yellow;
+}
+
+.col-md-4 p {
+	color: yellow;
+}
+
+.resetBtn {
+	text-align: center;
 }
