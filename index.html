@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>STAR WARS MAD LIBS</title>
-	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -13,42 +13,46 @@
 <body>
 <div class="container">
 	<h1>STAR WARS MAD LIBS</h1>
-	<form name="myForm" novalidate ng-submit="madlibCtrl.showMadLibs()">
-		<div class="inputs" ng-hide="madlibCtrl.showInputSection">
-			<h2>Fill in the blanks and complete your Jedi training.</h2>
+	<form name="myForm" novalidate ng-submit="myForm.$valid && madlibCtrl.showMadLibs()">
+	<div class="inputs" ng-hide="madlibCtrl.showInputSection">
+		<h2>Fill in the blanks to complete your Jedi training.</h2>
 			<div class="row">
 				<h3>TOPIC: HOW TO USE A LIGHTSABER, BY OBI-WAN KENOBI</h3>
-				<div class="col-md-4">
-					<input type="text" ng-model="madlibCtrl.pluralnoun1" placeholder="plural noun">
-					<input type="text" ng-model="madlibCtrl.verb1" placeholder="verb">
-					<input type="text" ng-model="madlibCtrl.pluralnoun2" placeholder="plural noun">
-					<input type="text" ng-model="madlibCtrl.pluralnoun3" placeholder="plural noun">
-					<input type="text" ng-model="madlibCtrl.pluralnoun4" placeholder="plural noun">
+					<div class="col-md-4">
+					<input type="text" ng-model="madlibCtrl.pluralnoun1" name="pluralnoun1" placeholder="plural noun" required><p ng-show="myForm.pluralnoun1.$invalid">Please enter a plural noun.</p>
+					<input type="text" ng-model="madlibCtrl.verb1" name="verb1" placeholder="verb" required><p ng-show="myForm.verb1.$invalid">Please enter a verb.</p>
+					<input type="text" ng-model="madlibCtrl.pluralnoun2" name="pluralnoun2" placeholder="plural noun" required><p ng-show="myForm.pluralnoun2.$invalid">Please enter a plural noun.</p>
+					<input type="text" ng-model="madlibCtrl.pluralnoun3" name="pluralnoun3" placeholder="plural noun" required><p ng-show="myForm.pluralnoun3.$invalid">Please enter a plural noun.</p>
+					<input type="text" ng-model="madlibCtrl.pluralnoun4" name="pluralnoun4" placeholder="plural noun" required><p ng-show="myForm.pluralnoun4.$invalid">Please enter a plural noun.</p>
 				</div>
 				<div class="col-md-4">
-					<input type="text" ng-model="madlibCtrl.noun1" placeholder="noun">
-					<input type="text" ng-model="madlibCtrl.adjective1" placeholder="adjective">
-					<input type="text" ng-model="madlibCtrl.pluralnoun5" placeholder="plural noun">
-					<input type="text" ng-model="madlibCtrl.noun2" placeholder="noun">
-					<input type="text" ng-model="madlibCtrl.noun3" placeholder="noun">
-				</div>      
-				<div class="col-md-4">
-					<input type="text" ng-model="madlibCtrl.noun4" placeholder="noun">
-					<input type="text" ng-model="madlibCtrl.verbEndingInIng" placeholder="verb ending in -'ing'">
-					<input type="text" ng-model="madlibCtrl.noun5" placeholder="noun">
-					<input type="text" ng-model="madlibCtrl.verb2" placeholder="verb">
-					<input type="text" ng-model="madlibCtrl.adverb1" placeholder="adverb">
-					<input type="text" ng-model="madlibCtrl.noun6" placeholder="noun">
+					<input type="text" ng-model="madlibCtrl.noun1" name="noun1" placeholder="noun" required><p ng-show="myForm.noun1.$invalid">Please enter a noun.</p>
+					<input type="text" ng-model="madlibCtrl.adjective1" name="adjective1" placeholder="adjective" required><p ng-show="myForm.adjective1.$invalid">Please enter an adjective.</p>
+					<input type="text" ng-model="madlibCtrl.pluralnoun5" name="pluralnoun5" placeholder="plural noun" required><p ng-show="myForm.pluralnoun5.$invalid">Please enter a plural noun.</p>
+					<input type="text" ng-model="madlibCtrl.noun2" name="noun2" placeholder="noun" required><p ng-show="myForm.noun2.$invalid">Please enter a noun.</p>
+					<input type="text" ng-model="madlibCtrl.noun3" name="noun3" placeholder="noun" required><p ng-show="myForm.noun3.$invalid">Please enter a noun.</p>
 				</div>
-				<input type="submit" value="MAY THE FORCE BE WITH YOU">
+				<div class="col-md-4">
+					<input type="text" ng-model="madlibCtrl.noun4" name="noun4" placeholder="noun" required><p ng-show="myForm.noun4.$invalid">Please enter a noun.</p>
+					<input type="text" ng-model="madlibCtrl.verbEndingInIng" name="verbEndingInIng" placeholder="verb ending in -'ing'" required><p ng-show="myForm.verbEndingInIng.$invalid">Please enter a verb ending in -ing.</p>
+					<input type="text" ng-model="madlibCtrl.noun5" name="noun5" placeholder="noun" required><p ng-show="myForm.noun5.$invalid">Please enter a noun.</p>
+					<input type="text" ng-model="madlibCtrl.verb2" name="verb2" placeholder="verb" required><p ng-show="myForm.verb2.$invalid">Please enter a verb.</p>
+					<input type="text" ng-model="madlibCtrl.adverb1" name="adverb1" placeholder="adverb" required><p ng-show="myForm.adverb1.$invalid">Please enter an adverb.</p>
+					<input type="text" ng-model="madlibCtrl.noun6" name="noun6" placeholder="noun" required><p ng-show="myForm.noun6.$invalid">Please enter a noun.</p>
+				</div>
+				<button class="btn btn-force">MAY THE FORCE BE WITH YOU</button>
 			</div>
-		</div>
+	</div>
 	</form>
 	<div class="text" ng-show="madlibCtrl.showTextSection">
 		<h3>HOW TO USE A LIGHTSABER, BY OBI-WAN KENOBI</h3>
 		<p>As a Jedi Master, I've taught some of the most talented <span>{{ madlibCtrl.pluralnoun1 }}</span> in the galaxy how to <span>{{ madlibCtrl.verb1 }}</span> with a lightsaber. Here are some tips for you. The most important thing to remember when you're wielding one of these precise <span>{{ madlibCtrl.pluralnoun2 }}</span> is to trust your <span>{{ madlibCtrl.pluralnoun3 }}</span>. This way you'll be able to sense your enemy's <span>{{ madlibCtrl.pluralnoun4 }}</span> before it's too late. A lightsaber is not only for use in Jedi-to-<span>{{ madlibCtrl.noun1 }}</span> combat -- it also comes in handy if you find yourself in a/an <span>{{ madlibCtrl.adjective1 }}</span> spot. For example, it can burn through metal <span>{{ madlibCtrl.pluralnoun5 }}</span> -- a convenient trick to have up your <span>{{ madlibCtrl.noun2 }}</span> if the Empire detains you in a holding <span>{{ madlibCtrl.noun3 }}</span>. While a lightsaber is a beautiful <span>{{ madlibCtrl.noun4 }}</span>, be careful if you see someone <span>{{ madlibCtrl.verbEndingInIng }}</span> with a red one -- this <span>{{ madlibCtrl.noun5 }}</span> works for the dark side. Finally, the most important part of learning how to <span>{{ madlibCtrl.verb2 }}</span> with a lightsaber: Whenever you're in battle, fight <span>{{ madlibCtrl.adverb1 }}</span>. May the <span>{{ madlibCtrl.noun6 }}</span> be with you, always.</p>
+		<button class="btn btn-reset" ng-click="madlibCtrl.resetMadLibs()">Reset</button>
 	</div>
 </div>
+	<pre>
+	{{ myForm | json }}
+	</pre>
 </body>
 </html>
 
