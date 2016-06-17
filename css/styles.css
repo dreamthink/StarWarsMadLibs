@@ -27,7 +27,7 @@ h2 {
 	margin: 10px;
 }
 
-.inputs {
+main {
 	text-align: center;
 	padding: 1em;
 	width: 60em;
@@ -87,4 +87,8 @@ span {
 
 .resetBtn {
 	text-align: center;
+}
+
+p {
+	color: yellow;
 }
