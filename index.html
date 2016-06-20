@@ -1,59 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp" ng-controller="MyController as madlibCtrl">
-<head>
-	<meta charset="UTF-8">
-	<title>STAR WARS MAD LIBS</title>
- 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-	<link href='https://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-	<script src="js/app.js"></script>
-	<link rel="stylesheet" href="css/styles.css">
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title>STAR WARS MAD LIBS</title>
+	 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+		<script src="js/app.js"></script>
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
 <body>
-<div class="container">
-	<h1>STAR WARS MAD LIBS</h1>
-	<form name="myForm" novalidate ng-submit="myForm.$valid && madlibCtrl.showMadLibs()">
-	<main ng-hide="madlibCtrl.showInputSection">
+<h1>STAR WARS MAD LIBS</h1>
+<main ng-show="madlibCtrl.showInputSection">
+	<form name="madlibCtrl.myForm" novalidate ng-submit="madlibCtrl.showMadLibs()">
 		<h2>Provide the words below to complete your Jedi training.</h2>
+		<div class="container-fluid">
 			<div class="row">
-					<div class="col-md-4">
-					<input type="text" ng-model="madlibCtrl.pluralnoun1" ng-class="{error: myForm.pluralnoun1.$invalid}" name="pluralnoun1" placeholder="plural noun" required><p ng-show="myForm.pluralnoun1.$invalid && myForm.pluralnoun1.$touched">Please enter a plural noun.</p>
-					<input type="text" ng-model="madlibCtrl.verb1" ng-class="{error: myForm.verb1.$invalid}" name="verb1" placeholder="verb" required><p ng-show="myForm.verb1.$invalid && myForm.verb1.$touched">Please enter a verb.</p>
-					<input type="text" ng-model="madlibCtrl.pluralnoun2" ng-class="{error: myForm.pluralnoun2.$invalid}" name="pluralnoun2" placeholder="plural noun" required><p ng-show="myForm.pluralnoun2.$invalid && myForm.pluralnoun2.$touched">Please enter a plural noun.</p>
-					<input type="text" ng-model="madlibCtrl.pluralnoun3" ng-class="{error: myForm.pluralnoun3.$invalid}" name="pluralnoun3" placeholder="plural noun" required><p ng-show="myForm.pluralnoun3.$invalid && myForm.pluralnoun3.$touched">Please enter a plural noun.</p>
-					<input type="text" ng-model="madlibCtrl.pluralnoun4" ng-class="{error: myForm.pluralnoun4.$invalid}" name="pluralnoun4" placeholder="plural noun" required><p ng-show="myForm.pluralnoun4.$invalid && myForm.pluralnoun4.$touched">Please enter a plural noun.</p>
+				<div class="col-md-4">
+					<input type="text" ng-model="madlibCtrl.pluralnoun1" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun1.$invalid}" name="pluralnoun1" placeholder="plural noun" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun1.$invalid">Please enter a plural noun.</p>
+					<input type="text" ng-model="madlibCtrl.verb1" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.verb1.$invalid}" name="verb1" placeholder="verb" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.verb1.$invalid">Please enter a verb.</p>
+					<input type="text" ng-model="madlibCtrl.pluralnoun2" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun2.$invalid}" name="pluralnoun2" placeholder="plural noun" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun2.$invalid">Please enter a plural noun.</p>
+					<input type="text" ng-model="madlibCtrl.pluralnoun3" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun3.$invalid}" name="pluralnoun3" placeholder="plural noun" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun3.$invalid">Please enter a plural noun.</p>
+					<input type="text" ng-model="madlibCtrl.pluralnoun4" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun4.$invalid}" name="pluralnoun4" placeholder="plural noun" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun4.$invalid">Please enter a plural noun.</p>
 				</div>
 				<div class="col-md-4">
-					<input type="text" ng-model="madlibCtrl.noun1" ng-class="{error: myForm.noun1.$invalid}" name="noun1" placeholder="noun" required><p ng-show="myForm.noun1.$invalid && myForm.noun1.$touched">Please enter a noun.</p>
-					<input type="text" ng-model="madlibCtrl.adjective1" ng-class="{error: myForm.adjective1.$invalid}" name="adjective1" placeholder="adjective" required><p ng-show="myForm.adjective1.$invalid && myForm.adjective1.$touched">Please enter an adjective.</p>
-					<input type="text" ng-model="madlibCtrl.pluralnoun5" ng-class="{error: myForm.pluralnoun5.$invalid}" name="pluralnoun5" placeholder="plural noun" required><p ng-show="myForm.pluralnoun5.$invalid && myForm.pluralnoun5.$touched">Please enter a plural noun.</p>
-					<input type="text" ng-model="madlibCtrl.noun2" ng-class="{error: myForm.noun2.$invalid}" name="noun2" placeholder="noun" required><p ng-show="myForm.noun2.$invalid && myForm.noun2.$touched">Please enter a noun.</p>
-					<input type="text" ng-model="madlibCtrl.noun3" ng-class="{error: myForm.noun3.$invalid}" name="noun3" placeholder="noun" required><p ng-show="myForm.noun3.$invalid && myForm.noun3.$touched">Please enter a noun.</p>
+					<input type="text" ng-model="madlibCtrl.noun1" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun1.$invalid}" name="noun1" placeholder="noun" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun1.$invalid">Please enter a noun.</p>
+					<input type="text" ng-model="madlibCtrl.adjective1" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.adjective1.$invalid}" name="adjective1" placeholder="adjective" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.adjective1.$invalid">Please enter an adjective.</p>
+					<input type="text" ng-model="madlibCtrl.pluralnoun5" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun5.$invalid}" name="pluralnoun5" placeholder="plural noun" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun5.$invalid">Please enter a plural noun.</p>
+					<input type="text" ng-model="madlibCtrl.noun2" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun2.$invalid}" name="noun2" placeholder="noun" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun2.$invalid">Please enter a noun.</p>
+					<input type="text" ng-model="madlibCtrl.noun3" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun3.$invalid}" name="noun3" placeholder="noun" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun3.$invalid">Please enter a noun.</p>
 				</div>
 				<div class="col-md-4">
-					<input type="text" ng-model="madlibCtrl.noun4" ng-class="{error: myForm.noun4.$invalid}" name="noun4" placeholder="noun" required><p ng-show="myForm.noun4.$invalid && myForm.noun4.$touched">Please enter a noun.</p>
-					<input type="text" ng-model="madlibCtrl.verbEndingInIng" ng-class="{error: myForm.verbEndingInIng.$invalid}" name="verbEndingInIng" placeholder="verb ending in -'ing'" required><p ng-show="myForm.verbEndingInIng.$invalid && myForm.verbEndingInIng.$touched">Please enter a verb ending in -ing.</p>
-					<input type="text" ng-model="madlibCtrl.noun5" ng-class="{error: myForm.noun5.$invalid}" name="noun5" placeholder="noun" required><p ng-show="myForm.noun5.$invalid && myForm.noun5.$touched">Please enter a noun.</p>
-					<input type="text" ng-model="madlibCtrl.verb2" ng-class="{error: myForm.verb2.$invalid}" name="verb2" placeholder="verb" required><p ng-show="myForm.verb2.$invalid && myForm.verb2.$touched">Please enter a verb.</p>
-					<input type="text" ng-model="madlibCtrl.adverb1" ng-class="{error: myForm.adverb1.$invalid}" name="adverb1" placeholder="adverb" required><p ng-show="myForm.adverb1.$invalid && myForm.adverb1.$touched">Please enter an adverb.</p>
-					<input type="text" ng-model="madlibCtrl.noun6" ng-class="{error: myForm.noun6.$invalid}" name="noun6" placeholder="noun" required><p ng-show="myForm.noun6.$invalid && myForm.noun6.$touched">Please enter a noun.</p>
+					<input type="text" ng-model="madlibCtrl.noun4" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun4.$invalid}" name="noun4" placeholder="noun" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun4.$invalid">Please enter a noun.</p>
+					<input type="text" ng-model="madlibCtrl.verbEndingInIng" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.verbEndingInIng.$invalid}" name="verbEndingInIng" placeholder="verb ending in -'ing'" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.verbEndingInIng.$invalid">Please enter a verb ending in -ing.</p>
+					<input type="text" ng-model="madlibCtrl.noun5" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun5.$invalid}" name="noun5" placeholder="noun" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun5.$invalid">Please enter a noun.</p>
+					<input type="text" ng-model="madlibCtrl.verb2" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.verb2.$invalid}" name="verb2" placeholder="verb" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.verb2.$invalid">Please enter a verb.</p>
+					<input type="text" ng-model="madlibCtrl.adverb1" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.adverb1.$invalid}" name="adverb1" placeholder="adverb" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.adverb1.$invalid">Please enter an adverb.</p>
+					<input type="text" ng-model="madlibCtrl.noun6" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun6.$invalid}" name="noun6" placeholder="noun" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun6.$invalid">Please enter a noun.</p>
 				</div>
-
-				<button class="btn btn-force">MAY THE FORCE BE WITH YOU</button>
-				<p ng-show="myForm.$invalid && myForm.$submitted">Please enter all fields</p>
 			</div>
-	</main>
+		</div>
+		<button class="btn btn-force">MAY THE FORCE BE WITH YOU</button>
 	</form>
-<!-- 	<pre>{{ myForm | json }}</pre> -->
+</main>
+
 	<div class="text" ng-show="madlibCtrl.showTextSection">
 		<h3>HOW TO USE A LIGHTSABER, BY OBI-WAN KENOBI</h3>
-		<p>As a Jedi Master, I've taught some of the most talented <span>{{ madlibCtrl.pluralnoun1 }}</span> in the galaxy how to <span>{{ madlibCtrl.verb1 }}</span> with a lightsaber. Here are some tips for you. The most important thing to remember when you're wielding one of these precise <span>{{ madlibCtrl.pluralnoun2 }}</span> is to trust your <span>{{ madlibCtrl.pluralnoun3 }}</span>. This way you'll be able to sense your enemy's <span>{{ madlibCtrl.pluralnoun4 }}</span> before it's too late. A lightsaber is not only for use in Jedi-to-<span>{{ madlibCtrl.noun1 }}</span> combat -- it also comes in handy if you find yourself in a/an <span>{{ madlibCtrl.adjective1 }}</span> spot. For example, it can burn through metal <span>{{ madlibCtrl.pluralnoun5 }}</span> -- a convenient trick to have up your <span>{{ madlibCtrl.noun2 }}</span> if the Empire detains you in a holding <span>{{ madlibCtrl.noun3 }}</span>. While a lightsaber is a beautiful <span>{{ madlibCtrl.noun4 }}</span>, be careful if you see someone <span>{{ madlibCtrl.verbEndingInIng }}</span> with a red one -- this <span>{{ madlibCtrl.noun5 }}</span> works for the dark side. Finally, the most important part of learning how to <span>{{ madlibCtrl.verb2 }}</span> with a lightsaber: Whenever you're in battle, fight <span>{{ madlibCtrl.adverb1 }}</span>. May the <span>{{ madlibCtrl.noun6 }}</span> be with you, always.</p>
+		<p class="text-results">As a Jedi Master, I've taught some of the most talented <span>{{ madlibCtrl.pluralnoun1 }}</span> in the galaxy how to <span>{{ madlibCtrl.verb1 }}</span> with a lightsaber. Here are some tips for you. The most important thing to remember when you're wielding one of these precise <span>{{ madlibCtrl.pluralnoun2 }}</span> is to trust your <span>{{ madlibCtrl.pluralnoun3 }}</span>. This way you'll be able to sense your enemy's <span>{{ madlibCtrl.pluralnoun4 }}</span> before it's too late. A lightsaber is not only for use in Jedi-to-<span>{{ madlibCtrl.noun1 }}</span> combat -- it also comes in handy if you find yourself in a/an <span>{{ madlibCtrl.adjective1 }}</span> spot. For example, it can burn through metal <span>{{ madlibCtrl.pluralnoun5 }}</span> -- a convenient trick to have up your <span>{{ madlibCtrl.noun2 }}</span> if the Empire detains you in a holding <span>{{ madlibCtrl.noun3 }}</span>. While a lightsaber is a beautiful <span>{{ madlibCtrl.noun4 }}</span>, be careful if you see someone <span>{{ madlibCtrl.verbEndingInIng }}</span> with a red one -- this <span>{{ madlibCtrl.noun5 }}</span> works for the dark side. Finally, the most important part of learning how to <span>{{ madlibCtrl.verb2 }}</span> with a lightsaber: Whenever you're in battle, fight <span>{{ madlibCtrl.adverb1 }}</span>. May the <span>{{ madlibCtrl.noun6 }}</span> be with you, always.</p>
 		<div class="resetBtn">
-		<button class="btn btn-reset" ng-click="madlibCtrl.resetMadLibs()">Reset</button>
+			<button class="btn btn-reset" ng-click="madlibCtrl.resetMadLibs()">Reset</button>
 		</div>
 	</div>
-</div>
+
 </body>
 </html>
 
