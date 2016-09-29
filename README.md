@@ -1,4 +1,4 @@
-http://dreamthink.github.io/StarWarsMadLibs/
+http://dreamthink.github.io/starwarsmadlibs
 
 A Star Wars Mad Libs game using AngularJS.
 
