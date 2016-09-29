@@ -1,5 +1,40 @@
-var app = angular.module("myApp", ['ngAnimate']);
-	app.controller("MyController", function() {		
+angular.module("myApp", ["ngAnimate", "ngRoute"])
+	.config(["$routeProvider", function($routeProvider) {
+		$routeProvider.when("/", {
+			templateUrl: "templates/home.html",
+			controller: "HomeController",
+			controllerAs: "vm"
+		})
+		.when("/madlib1", {
+			templateUrl: "templates/madlib1.html",
+			controller: "MadLibController1",
+			controllerAs: "vm"
+		})
+		.when("madlib1results", {
+			templateUrl: "templates/madlib1results.html",
+			controller: "MadLibController1",
+			controllerAs: "vm"
+		})
+		.when("/madlib2", {
+			templateUrl: "templates/madlib2.html",
+			controller: "MadLibController1",
+			controllerAs: "vm"
+		})
+		.when("madlib2results", {
+			templateUrl: "templates/madlib2results.html",
+			controller: "MadLibController2",
+			controllerAs: "vm"
+		});
+	}])
+	.controller("HomeController", function() {
+		$(".lightsidelogo").click(function(e) {
+			e.preventDefault();
+			$(this).toggle("bounce", {times: 3, distance: 15}, "slow");
+			setTimeout('window.location.href=' + $(this).attr(href), 2000);
+		});
+	})
+
+	.controller("MadLibController1", function() {		
 
 	// set initial input values as blank
 		this.pluralnoun1 = "";
@@ -56,4 +91,4 @@ var app = angular.module("myApp", ['ngAnimate']);
 			this.myForm.$setPristine();
 		};
 
-	});	
+	});

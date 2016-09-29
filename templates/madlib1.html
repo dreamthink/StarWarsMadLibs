@@ -1,0 +1,42 @@
+MAD LIB 1
+
+<main ng-show="madlibCtrl.showInputSection" ng-cloak>
+	<form name="madlibCtrl.myForm" novalidate ng-submit="madlibCtrl.showMadLibs()">
+		<h2>Provide the words below to complete your Jedi training.</h2>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<input type="text" ng-model="madlibCtrl.pluralnoun1" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun1.$invalid}" name="pluralnoun1" placeholder="plural noun" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun1.$invalid">Please enter a plural noun.</p>
+					<input type="text" ng-model="madlibCtrl.verb1" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.verb1.$invalid}" name="verb1" placeholder="verb" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.verb1.$invalid">Please enter a verb.</p>
+					<input type="text" ng-model="madlibCtrl.pluralnoun2" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun2.$invalid}" name="pluralnoun2" placeholder="plural noun" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun2.$invalid">Please enter a plural noun.</p>
+					<input type="text" ng-model="madlibCtrl.pluralnoun3" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun3.$invalid}" name="pluralnoun3" placeholder="plural noun" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun3.$invalid">Please enter a plural noun.</p>
+					<input type="text" ng-model="madlibCtrl.pluralnoun4" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun4.$invalid}" name="pluralnoun4" placeholder="plural noun" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun4.$invalid">Please enter a plural noun.</p>
+<!-- 				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12"> -->
+					<input type="text" ng-model="madlibCtrl.noun1" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun1.$invalid}" name="noun1" placeholder="noun" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun1.$invalid">Please enter a noun.</p>
+					<input type="text" ng-model="madlibCtrl.adjective1" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.adjective1.$invalid}" name="adjective1" placeholder="adjective" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.adjective1.$invalid">Please enter an adjective.</p>
+					<input type="text" ng-model="madlibCtrl.pluralnoun5" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun5.$invalid}" name="pluralnoun5" placeholder="plural noun" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.pluralnoun5.$invalid">Please enter a plural noun.</p>
+					<input type="text" ng-model="madlibCtrl.noun2" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun2.$invalid}" name="noun2" placeholder="noun" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun2.$invalid">Please enter a noun.</p>
+					<input type="text" ng-model="madlibCtrl.noun3" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun3.$invalid}" name="noun3" placeholder="noun" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun3.$invalid">Please enter a noun.</p>
+<!-- 				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12"> -->
+					<input type="text" ng-model="madlibCtrl.noun4" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun4.$invalid}" name="noun4" placeholder="noun" required><p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun4.$invalid">Please enter a noun.</p>
+					<input type="text" ng-model="madlibCtrl.verbEndingInIng" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.verbEndingInIng.$invalid}" name="verbEndingInIng" placeholder="verb ending in -'ing'" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.verbEndingInIng.$invalid">Please enter a verb ending in -ing.</p>
+					<input type="text" ng-model="madlibCtrl.noun5" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun5.$invalid}" name="noun5" placeholder="noun" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun5.$invalid">Please enter a noun.</p>
+					<input type="text" ng-model="madlibCtrl.verb2" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.verb2.$invalid}" name="verb2" placeholder="verb" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.verb2.$invalid">Please enter a verb.</p>
+					<input type="text" ng-model="madlibCtrl.adverb1" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.adverb1.$invalid}" name="adverb1" placeholder="adverb" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.adverb1.$invalid">Please enter an adverb.</p>
+					<input type="text" ng-model="madlibCtrl.noun6" ng-class="{error: madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun6.$invalid}" name="noun6" placeholder="noun" required>
+					<p ng-show="madlibCtrl.myForm.$submitted && madlibCtrl.myForm.noun6.$invalid">Please enter a noun.</p>
+				</div>
+			</div>
+		</div>
+		<button class="btn btn-force">MAY THE FORCE BE WITH YOU</button>
+	</form>
+</main>
